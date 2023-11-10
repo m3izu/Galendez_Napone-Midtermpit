@@ -3,17 +3,19 @@ import subprocess
 import tkinter as tk
 import threading
 import time
-import os
+import webbrowser
+
+# Printing a title using ASCII art
 print("▄▄▌ ▐ ▄▌▄▄▄ .▄▄▌   ▄▄·       • ▌ ▄ ·. ▄▄▄ .\n██· █▌▐█▀▄.▀·██•  ▐█ ▌▪▪     ·██ ▐███▪▀▄.▀·\n██▪▐█▐▐▌▐▀▀▪▄██▪  ██ ▄▄ ▄█▀▄ ▐█ ▌▐▌▐█·▐▀▀▪▄\n▐█▌██▐█▌▐█▄▄▌▐█▌▐▌▐███▌▐█▌.▐▌██ ██▌▐█▌▐█▄▄▌\n ▀▀▀▀ ▀▪ ▀▀▀ .▀▀▀ ·▀▀▀  ▀█▄▀▪▀▀  █▪▀▀▀ ▀▀▀")
 
-
+# Function to prompt the user to press 1 to proceed
 def input1():
     print("Press 1 to Proceed:")
 
-
+# Calling the function to prompt user input
 input1()
 
-
+# Function to check if user input is '1', otherwise exit
 def proceed():
     useri = input()
     if useri == '1':
@@ -22,14 +24,17 @@ def proceed():
         print("You Failed")
         sys.exit(0)
 
-
+# Definitions of image filenames
 E1 = "E1.jpg"
 E2 = "E2.jpg"
 E3 = "E3.jpg"
 E4 = "E4.jpg"
 E5 = "E5.jpg"
+
+# Prompting the user to press 1
 proceed()
 
+# Storytelling and displaying images
 print("You are but a lonely adventurer stuck in a cave full of professors who would grade you a failing mark")
 proceed()
 print("In order to escape the cave, you must solve their problems to get a passing grade and destroy the final boss")
@@ -39,38 +44,46 @@ proceed()
 subprocess.run(['start', E1], shell=True)
 print("Albert: \'You are facing me!\'")
 proceed()
+
+# Quiz on famous equations
 Ques1 = (input("What is the famous equation that expresses the fact that mass and energy are the same physical entity and can be changed into each other?\n Type:   A. e=mc^2 B. a^2+b^2=c^2 C. F=ma D. v-e+f=2 "))
 
+# Checking the user's answer and providing feedback
 if Ques1 == "A":
-    print("Correct! E=mc^2 is one of the most famous equations in physics, formulated by Albert Einstein in 1905 as part of his theory of special relativity. \nThe equation relates mass (m) to energy (E) and the speed of light (c), and it states that the energy (E) of an object is equal to its mass (m) times the speed of light (c) squared.")
+    print("Correct! E=mc^2 is one of the most famous equations in physics...")
 elif Ques1 == "B":
-    print("Wrong! The Pythagorean theorem is a fundamental principle in geometry that relates to right triangles. \nIt states that in a right triangle, the square of the length of the hypotenuse (the side opposite the right angle) is equal to the sum of the squares of the lengths of the other two sides.")
+    print("Wrong! The Pythagorean theorem is a fundamental principle in geometry...")
     sys.exit(0)
 elif Ques1 == "C":
-    print("Wrong! The equation F=ma represents Newton's second law of motion, a fundamental principle in classical mechanics formulated by Sir Isaac Newton. \nIt describes the relationship between the force (F) applied to an object, the mass (m) of the object, and the resulting acceleration (a) of the object.")
+    print("Wrong! The equation F=ma represents Newton's second law of motion...")
     sys.exit(0)
 elif Ques1 == "D":
-    print("Wrong! The equation \"V - E + F = 2\" is known as Euler's formula, which is a fundamental result in the field of graph theory and topology.")
+    print("Wrong! The equation \"V - E + F = 2\" is known as Euler's formula...")
     sys.exit(0)
 else:
     print("You chose none of the given letters. YOU DIE")
     sys.exit(0)
 
+# Continuing the story
 proceed()
 print("*Albert succumbed and died because he wasn't able to fail the user*")
 proceed()
 subprocess.run(['start', E2], shell=True)
 print("Nikola: I'll be giving you a hint, P = V x I cos(0)")
 proceed()
+
+# Quiz on electrical power
 print(" In a circuit with a voltage of 120 volts and a current of 5 amperes, if the phase angle (θ) between the voltage and current waveforms is 45 degrees, what is the power (P) dissipated in the circuit?")
 Ques2 = input("Answer Directly, given answer doesn't need its decimal numbers")
 
+# Checking the user's answer and providing feedback
 if Ques2 == "424":
-    print("Correct! \nV (voltage) = 120 volts \nI (current) = 5 amperes \nθ (phase angle) = 45 degrees \nLet's calculate the power: \nP = 120 V * 5 A * cos(45°)\nFirst, calculate the cosine of 45 degrees:\ncos(45°) ≈ 0.7071\nNow, plug this value into the formula:\nP ≈ 120 V * 5 A * 0.7071 ≈ 424.26 watts\n So, the power dissipated in the circuit is approximately 424.26 watts.")
+    print("Correct! \nV (voltage) = 120 volts ...")
 else:
     print("You Failed!")
     sys.exit(0)
 
+# Continuing the story
 proceed()
 print("You defeated Nikola. On to the Next Opponent!!!")
 proceed()
@@ -79,7 +92,7 @@ print("Robert: Good Evening ")
 proceed()
 print("It would seem you have defeated two opponents already")
 proceed()
-print("Nonetheless, i am no one but an ally.")
+print("Nonetheless, I am no one but an ally.")
 proceed()
 print("Take this, it will be useful for your future endeavors. A tool that would be of much use when facing your last two opponents")
 proceed()
@@ -87,8 +100,9 @@ print("\033 You Have Obtained a Calculator \033")
 proceed()
 print("\' HINT: Do not close your calculator")
 
-
+# Function to run a simple calculator using Tkinter
 def run_calculator():
+    # Nested functions for calculator functionality
     def evaluate_expression(expression):
         try:
             result = str(eval(expression))
@@ -107,6 +121,7 @@ def run_calculator():
         else:
             entry_var.set(current_text + str(value))
 
+    # Creating the calculator window
     root = tk.Tk()
     root.title("Simple Calculator")
 
@@ -125,6 +140,7 @@ def run_calculator():
     row_val = 1
     col_val = 0
 
+    # Creating calculator buttons
     for button in buttons:
         tk.Button(root, text=button, padx=20, pady=20, font=('Arial', 14),
                   command=lambda b=button: on_button_click(b)).grid(row=row_val, column=col_val)
@@ -133,37 +149,36 @@ def run_calculator():
             col_val = 0
             row_val += 1
 
+    # Running the calculator window
     root.mainloop()
 
-
+# Creating a thread to run the calculator concurrently
 calculator_thread = threading.Thread(target=run_calculator)
 calculator_thread.start()
 
-
+# Continuing the story
 proceed()
 subprocess.run(['start', E4], shell=True)
 print("I'm ADA!!!")
 proceed()
-
 print("I'll be destroying you with some time trial questions!!")
 proceed()
 
-
+# Function to print questions and get user answers
 def print_question(question, options):
     print(question)
     for option in options:
         print(option)
 
-
 def get_user_answer():
     return input("Your answer (enter the number): ").strip()
 
-
+# Time trial quiz
 def quiz():
     questions = [
         {"question": "What happens if a number is divided by 0?", "options": ["1. Complex Infinity", "2. One", "3. Undefined", "4. IDK"], "answer": "1"},
         {"question": "What is Base10?", "options": ["1. Hexadecimal", "2. Decimal", "3. Octal", "4. Binary"], "answer": "2"},
-        {"question": "What number system starts a \'0b\'", "options": ["1. Decimal", "2. Binary", "3. Hexadecimal", "4. Octal"], "answer": "2"},
+        {"question": "What number system starts a '0b'", "options": ["1. Decimal", "2. Binary", "3. Hexadecimal", "4. Octal"], "answer": "2"},
     ]
 
     time_limit = 15
@@ -196,16 +211,18 @@ def quiz():
 
     print("\nQuiz completed!")
 
-
+# Running the time trial quiz
 if __name__ == "__main__":
     quiz()
 
+# Continuing the story
 proceed()
 
 print("On to the last boss...")
 print(" ______     __     ______        ______     ______     __         ______   __  __    \n/\  ___\   /\ \   /\  == \      /\  == \   /\  __ \   /\ \       /\  == \ /\ \_\ \  \n\ \___  \  \ \ \  \ \  __<      \ \  __<   \ \  __ \  \ \ \____  \ \  _-/ \ \  __ \ \n \/\_____\  \ \_\  \ \_\ \_\     \ \_\ \_\  \ \_\ \_\  \ \_____\  \ \_\    \ \_\ \_\ \n  \/_____/   \/_/   \/_/ /_/      \/_/ /_/   \/_/\/_/   \/_____/   \/_/     \/_/\/_/")
 proceed()
 
+# Final boss battle
 print("ho..")
 proceed()
 print("ho...")
@@ -215,22 +232,22 @@ proceed()
 print("PREPARE TO MEET YOUR MAKER!")
 proceed()
 subprocess.run(['start', E5], shell=True)
+webbrowser.open("Boss.wav")
 proceed()
 print("You will die here!!!")
 proceed()
 print("\'Hint: Now's the time to use the calculator, Sir Ralph will attack you with some basic arithmetic questions")
 
-
+# Function to print questions and get user answers for the final boss battle
 def print_question2(question, options):
     print(question)
     for option in options:
         print(option)
 
-
 def get_user_answer2():
     return input("Your answer (enter the number): ").strip()
 
-
+# Final boss battle quiz
 def quiz2():
     questions = [
         {"question": "7656 multiply by 76173 =", "options": ["1. 583,180,487", "2. 643,656,853", "3. 734,854,422", "4. 583,180,488"], "answer": "4"},
@@ -268,10 +285,11 @@ def quiz2():
 
     print("\nQuiz completed!")
 
-
+# Running the final boss battle quiz
 if __name__ == "__main__":
     quiz2()
 
+# Continuing the story
 proceed()
 print("YOU WON!!!")
 proceed()
