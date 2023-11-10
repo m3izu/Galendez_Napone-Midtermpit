@@ -3,7 +3,7 @@ import subprocess
 import tkinter as tk
 import threading
 import time
-import webbrowser
+import winsound
 
 # Printing a title using ASCII art
 print("▄▄▌ ▐ ▄▌▄▄▄ .▄▄▌   ▄▄·       • ▌ ▄ ·. ▄▄▄ .\n██· █▌▐█▀▄.▀·██•  ▐█ ▌▪▪     ·██ ▐███▪▀▄.▀·\n██▪▐█▐▐▌▐▀▀▪▄██▪  ██ ▄▄ ▄█▀▄ ▐█ ▌▐▌▐█·▐▀▀▪▄\n▐█▌██▐█▌▐█▄▄▌▐█▌▐▌▐███▌▐█▌.▐▌██ ██▌▐█▌▐█▄▄▌\n ▀▀▀▀ ▀▪ ▀▀▀ .▀▀▀ ·▀▀▀  ▀█▄▀▪▀▀  █▪▀▀▀ ▀▀▀")
@@ -232,7 +232,7 @@ proceed()
 print("PREPARE TO MEET YOUR MAKER!")
 proceed()
 subprocess.run(['start', E5], shell=True)
-webbrowser.open("Boss.wav")
+winsound.PlaySound('Boss.wav', winsound.SND_FILENAME)
 proceed()
 print("You will die here!!!")
 proceed()
