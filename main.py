@@ -25,7 +25,7 @@ def proceed():
         sys.exit(0)
 
 # Definitions of image filenames
-E1 = "12345.jpg"
+E1 = "E1.jpg"
 E2 = "E2.jpg"
 E3 = "E3.jpg"
 E4 = "E4.jpg"
