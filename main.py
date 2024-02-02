@@ -314,7 +314,6 @@ person1 = Person(name, age)
 print(person1.name)
 print(person1.age)
 person1.greet()
-1
 proceed()
 
 sys.exit(0)
